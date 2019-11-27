@@ -1,26 +1,39 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "declaration": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": [
+        "dom",
+        "es2015"
+      ],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "paths": {
+        "api/*": ["./api/server/*"]
+      },
+      "sourceMap": true,
+      "target": "es5",
+      "skipLibCheck": true,
+      "stripInternal": true,
+      "noImplicitAny": false,
+      "types": [
+        "@types/meteor"
+      ]
+    },
+    "include": [
+      "src/**/*.ts",
+      "api/**/*.ts"
     ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "exclude": [
+      "node_modules",
+      "api/node_modules",
+      "api"
+    ],
+    "compileOnSave": false,
+    "atom": {
+      "rewriteTsconfig": false
+    }
   }
-}
